@@ -1,0 +1,57 @@
+{
+  "name": "library_management",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate-swagger": "node swagger.js",
+    "test": "jest",
+    "start": "node -r dotenv/config index.js",
+    "start:nodemon": "nodemon -r dotenv/config index.js",
+    "migrate": "cd database && npx sequelize-cli db:migrate",
+    "seed": "cd database && npx sequelize-cli db:seed:all",
+    "undo:migrate:all": "cd database && npx sequelize-cli db:migrate:undo:all",
+    "undo:seed:all": "cd database && npx sequelize-cli db:seed:undo:all",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "reset": "cd database && npx sequelize-cli db:migrate:undo:all && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://radovcicmarko@github.com/agilathon/library_management.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agilathon/library_management/issues"
+  },
+  "homepage": "https://github.com/agilathon/library_management#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.3",
+    "isbn-validate": "^1.0.3",
+    "jsonwebtoken": "^9.0.0",
+    "node-cron": "^3.0.2",
+    "node-fetch": "^2.6.9",
+    "nodemailer": "^6.9.1",
+    "pg": "^8.9.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.28.0",
+    "swagger-ui-express": "^4.6.1",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.4.3",
+    "nodemon": "^2.0.20",
+    "sequelize-cli": "^6.6.0",
+    "swagger-autogen": "^2.23.1"
+  }
+}
